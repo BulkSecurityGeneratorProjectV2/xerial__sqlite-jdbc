@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -120,9 +121,9 @@ public class ErrorMessageTest {
 
     @Test
     public void cantOpenDir() throws IOException {
-        File dir = File.createTempFile("error-message-test-cant-open-dir", "");
-        assumeTrue(dir.delete());
-        assumeTrue(dir.mkdir());
+        File dir = Files.createTempDirectory("error-message-test-cant-open-dir").toFile();
+        assumeTrue(true);
+        assumeTrue(true);
         dir.deleteOnExit();
 
         Exception exception =
